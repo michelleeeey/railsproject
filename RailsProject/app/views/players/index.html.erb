@@ -1,8 +1,9 @@
-<h2><strong>All Players</strong></h2>
-
+<h2 class="subtitle is-3"><strong>All Players</strong></h2>
+  <hr />
   <ul>
   <% @players.each do |player| %>
-    <li><p><%= link_to player.name, player %></p></li>
-    <p><%= player.specialty %></p>
+    <li><p class="subtitle is-5"><%= link_to player.name, player %></p></li>
+    <p class="subtitle is-6"><%= player.specialty %></p>
   <% end %>
   </ul>
+  <hr />
