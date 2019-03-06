@@ -19,6 +19,13 @@
               </ul>
           </nav>
 
+
+            <%= form_tag(search_results_path, method: "get") do %>
+            <%= label_tag(:q, "Search for:") %>
+            <%= text_field_tag(:query) %>
+            <%= submit_tag("Search") %>
+            <% end %>
+
     <%= yield %>
   </body>
 </html>
