@@ -1,2 +1,8 @@
-<h1>Battlegrounds#index</h1>
-<p>Find me in app/views/battlegrounds/index.html.erb</p>
+<h2>Battlegrounds</h2>
+
+<ul>
+    <% @battlegrounds.each do |battleground| %>
+    <li><h3><%= link_to battleground.name, battleground %></h3>
+    <p>Location: <%= battleground.location %></p>
+    <% end %>
+</ul>
