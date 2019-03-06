@@ -1,8 +1,9 @@
-<h2><strong>All Teams</strong></h2>
-
+<h2 class="subtitle is-3"><strong>All Teams</strong></h2>
+  <hr />
   <ul>
   <% @teams.each do |team| %>
-    <li><p><%= link_to team.name, team %></p></li>
-    <p><%= team.battleground.location %></p>
+    <li><p class="subtitle is-5"><%= link_to team.name, team %></p></li>
+    <p class="subtitle is-6"><%= team.battleground.location %></p>
   <% end %>
   </ul>
+  <hr />

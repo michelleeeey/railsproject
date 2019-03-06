@@ -1,15 +1,13 @@
-<h2><strong><%= @team.name %></strong></h2>
-<p><%= @team.battleground.name %> Battleground</p>
+<h2 class="title is-4"><strong><%= @team.name %></strong></h2>
+<p class="subtitle is-6"><%= @team.battleground.name %> Battleground</p>
 
-  <p><strong>List of Players: </strong></p>
+  <p class="subtitle is-6"><strong>List of Players: </strong></p>
 
-      <ul>
+      <ul class="subtitle is-6 is-spaced">
       <% @team.players.each do |player| %>
         <li ><%= link_to player.name, player %></li>
-        <p>Specialty: <%= player.specialty %></p>
+        <p class="subtitle is-6 is-spaced">Specialty: <%= player.specialty %></p>
       <% end %>
       </ul>
 
   <p><%= link_to 'Back', battleground_path %></p>
-
-</html>
