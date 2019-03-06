@@ -8,5 +8,7 @@ Rails.application.routes.draw do
 
   get 'search_results', to: 'search#results', as: 'search_results'
 
+  get 'static/:permalink', to: 'pages#static', as: 'static'
+
   root to: 'battlegrounds#index'
 end

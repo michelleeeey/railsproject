@@ -10,11 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_06_061719) do
+ActiveRecord::Schema.define(version: 2019_03_06_091316) do
 
   create_table "battlegrounds", force: :cascade do |t|
     t.string "name"
     t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.string "permalink"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
