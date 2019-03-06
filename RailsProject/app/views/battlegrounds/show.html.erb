@@ -1,0 +1,15 @@
+<h2><strong><%= @battleground.name %></strong></h2>
+
+  <p><strong>Current Top Teams:</strong></p>
+
+ <ol>
+      <% @battleground.teams.each do |team| %>
+        <li><%= link_to team.name, team %></li>
+        <p>Players:</p>
+              <ul>
+                <% team.players.each do |player| %>
+                <li><%= link_to player.name, player %></li>
+              <% end %>
+              </ul>
+      <% end %>
+    </ol>

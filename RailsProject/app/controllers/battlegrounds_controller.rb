@@ -6,6 +6,6 @@ class BattlegroundsController < ApplicationController
   end
 
   def show
-    @battleground = Battleground.includes(:teams).find(params[:id])
+    @battleground = Battleground.find(params[:id])
   end
 end
