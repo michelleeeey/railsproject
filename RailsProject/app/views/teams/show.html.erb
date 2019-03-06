@@ -1,2 +1,15 @@
-<h1>Teams#show</h1>
-<p>Find me in app/views/teams/show.html.erb</p>
+<h2><strong><%= @team.name %></strong></h2>
+<p><%= @team.battleground.name %> Battleground</p>
+
+  <p><strong>List of Players: </strong></p>
+
+      <ul>
+      <% @team.players.each do |player| %>
+        <li ><%= link_to player.name, player %></li>
+        <p>Specialty: <%= player.specialty %></p>
+      <% end %>
+      </ul>
+
+  <p><%= link_to 'Back', battleground_path %></p>
+
+</html>
