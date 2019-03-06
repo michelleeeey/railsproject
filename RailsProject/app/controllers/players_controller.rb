@@ -2,7 +2,7 @@
 
 class PlayersController < ApplicationController
   def index
-    @players = Player.includes(:battleground)
+    @players = Player.includes(:battleground).page(params[:page]).per(10)
   end
 
   def show

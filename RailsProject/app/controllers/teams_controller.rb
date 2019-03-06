@@ -2,7 +2,7 @@
 
 class TeamsController < ApplicationController
   def index
-    @teams = Team.includes(:battleground)
+    @teams = Team.includes(:battleground).page(params[:page]).per(10)
   end
 
   def show
