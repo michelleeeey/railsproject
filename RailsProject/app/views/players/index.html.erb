@@ -1,2 +1,8 @@
-<h1>Players#index</h1>
-<p>Find me in app/views/players/index.html.erb</p>
+<h2><strong>All Players</strong></h2>
+
+  <ul>
+  <% @players.each do |player| %>
+    <li><p><%= link_to player.name, player %></p></li>
+    <p><%= player.specialty %></p>
+  <% end %>
+  </ul>
