@@ -1,8 +1,7 @@
-<h2>Battlegrounds</h2>
-
-<ul>
-    <% @battlegrounds.each do |battleground| %>
-    <li><h3><%= link_to battleground.name, battleground %></h3>
-    <p>Location: <%= battleground.location %></p>
-    <% end %>
-</ul>
+<h2 class="subtitle is-3"><strong>Battlegrounds</strong></h2>
+    <ul>
+        <% @battlegrounds.each do |battleground| %>
+        <li><p class="subtitle is-5"><%= link_to battleground.name, battleground %></p></li>
+        <p class="subtitle is-6">Location: <%= battleground.location %></p>
+        <% end %>
+    </ul>

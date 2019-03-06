@@ -1,15 +1,19 @@
-<h2><strong><%= @battleground.name %></strong></h2>
+<h2 class="subtitle is-3"><strong><%= @battleground.name %></strong></h2>
 
-  <p><strong>Current Top Teams:</strong></p>
+  <p class= "subtitle is-5"><strong>Current Top Teams:</strong></p>
 
- <ol>
+
+    <ol class="subtitle is-6 is-spaced">
       <% @battleground.teams.each do |team| %>
-        <li><%= link_to team.name, team %></li>
-        <p>Players:</p>
-              <ul>
+        <li class="title is-5"><%= link_to team.name, team %></li>
+        <p class="is-size-6">Players:</p>
+              <ul class="subtitle is-6 is-spaced">
                 <% team.players.each do |player| %>
                 <li><%= link_to player.name, player %></li>
               <% end %>
               </ul>
       <% end %>
     </ol>
+
+
+<p><%= link_to 'Back', battlegrounds_path %></p>
