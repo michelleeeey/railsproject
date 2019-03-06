@@ -1,2 +1,34 @@
-<h1>Search#results</h1>
-<p>Find me in app/views/search/results.html.erb</p>
+<h2 class="title is-4 is-spaced">Search Results</h2>
+
+
+<% if @battleground_found.present? %>
+  <h3 class= "subtitle is-6">Results found for "<%= @query %>" returned <%= pluralize(@battleground_found.size, 'result') %>.</h3>
+    <ul class="subtitle is-6 is-spaced">
+        <% @battleground_found.each do |battleground| %>
+        <li><h3><%= link_to battleground.name, battleground %></h3>
+        <p><%= battleground.location %></p>
+        <% end %>
+    </ul>
+  <%end%>
+
+<% if @team_found.present? %>
+  <h3 class= "subtitle is-6">Results found for "<%= @query %>" returned <%= pluralize(@team_found.size, 'result') %>.</h3>
+      <ul class="subtitle is-6 is-spaced">
+        <% @team_found.each do |team| %>
+          <li><%= link_to team.name, team %></li>
+        <% end %>
+      </ul>
+  <%end%>
+
+<% if @player_found.present? %>
+  <h3 class= "subtitle is-6">Results found for "<%= @query %>" returned <%= pluralize(@player_found.size, 'result') %>.</h3>
+      <ul class="subtitle is-6 is-spaced">
+        <% @player_found.each do |player| %>
+          <li><%= link_to player.name, player %></li>
+        <% end %>
+      </ul>
+  <%end%>
+
+
+
+<p><%= link_to 'Back', battlegrounds_path %></p>
