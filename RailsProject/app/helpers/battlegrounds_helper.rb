@@ -1,0 +1,2 @@
+module BattlegroundsHelper
+end
