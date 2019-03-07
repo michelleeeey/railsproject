@@ -1,34 +1,17 @@
-<h2 class="title is-4 is-spaced">Search Results</h2>
+  <div class="container">
+    <h2 class="title is-3 is-spaced">Search Results</h2>
+        <h3 class= "subtitle is-6">Results found for "<%= @query %>" returned <%= pluralize(@search_query.size, 'result')%>.</h3>
+    </div>
 
-
-<% if @battleground_found.present? %>
-  <h3 class= "subtitle is-6">Results found for "<%= @query %>" returned <%= pluralize(@battleground_found.size, 'result') %>.</h3>
-    <ul class="subtitle is-6 is-spaced">
-        <% @battleground_found.each do |battleground| %>
-        <li><h3><%= link_to battleground.name, battleground %></h3>
-        <p><%= battleground.location %></p>
-        <% end %>
+<div class="container">
+  <section class="section">
+    <ul class="subtitle is-6">
+        <% @search_query.each do |s|%>
+          <h1 class="title is-size-5"><%= link_to s.name, s %></h1>
+          <h2 class="subtitle is-size-6 is-spaced">
+          <%= s.class.name %>
+          </h2>
+          <% end %>
     </ul>
-  <%end%>
+  </section>
 
-<% if @team_found.present? %>
-  <h3 class= "subtitle is-6">Results found for "<%= @query %>" returned <%= pluralize(@team_found.size, 'result') %>.</h3>
-      <ul class="subtitle is-6 is-spaced">
-        <% @team_found.each do |team| %>
-          <li><%= link_to team.name, team %></li>
-        <% end %>
-      </ul>
-  <%end%>
-
-<% if @player_found.present? %>
-  <h3 class= "subtitle is-6">Results found for "<%= @query %>" returned <%= pluralize(@player_found.size, 'result') %>.</h3>
-      <ul class="subtitle is-6 is-spaced">
-        <% @player_found.each do |player| %>
-          <li><%= link_to player.name, player %></li>
-        <% end %>
-      </ul>
-  <%end%>
-
-
-
-<p><%= link_to 'Back', battlegrounds_path %></p>
