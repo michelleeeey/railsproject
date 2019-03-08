@@ -1,13 +1,14 @@
-<h2 class="title is-4"><strong><%= @team.name %></strong></h2>
-<p class="subtitle is-6"><%= @team.battleground.name %> Battleground</p>
 
-  <p class="subtitle is-6"><strong>List of Players: </strong></p>
+<h2 class="title is-size-3"><%= @team.class.name %></h2>
+<h2 class="title is-size-4"><%= @team.name %></h2>
+<h2 class="subtitle is-size-6"><%= @team.battleground.name %> Battleground</h2>
+<hr/>
+<h3 class="subtitle is-size-5 is-italic"><%= @team.quote %></h3>
+<h3 class="subtitle is-size-5 is-spaced"><strong>List of Players: </strong></h3>
 
-      <ul class="subtitle is-6 is-spaced">
-      <% @team.players.each do |player| %>
-        <li ><%= link_to player.name, player %></li>
-        <p class="subtitle is-6 is-spaced">Specialty: <%= player.specialty %></p>
-      <% end %>
-      </ul>
+  <% @team.players.each do |player| %>
+    <h4 class="title is-size-5" ><%= link_to player.name, player %></h4>
+    <h4 class="subtitle is-size-6 is-spaced">Specialty: <%= player.specialty %></h4>
+  <% end %>
 
-  <p><%= link_to 'Back', battleground_path %></p>
+<p><%= link_to 'Back', battleground_path %></p>

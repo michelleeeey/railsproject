@@ -10,39 +10,40 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   </head>
   <body>
-  <section class="section is hero is-small is-dark is-bold">
-    <div class="container">
-      <h1 class="title is-2">Magic Realm Tournament</h1>
-        <nav class= "navbar" role="navigation" aria-label="main navigation">
-          <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-start">
-              <a class="navbar-item">
-                  <%= link_to 'Home', root_path %>
-              </a>
-              <a class="navbar-item">
-                  <%= link_to 'Teams', teams_path %>
-              </a>
-              <a class="navbar-item">
-                <%= link_to 'Players', players_path %>
-              </a>
-              <a class="navbar-item">
-                <%= link_to 'About', static_path(permalink: 'about-us') %>
-              </a>
-          </nav>
+    <section class="section is hero is-small is-dark is-bold">
+      <div class="container">
+        <h1 class="title is-2">Magic Realm Tournament</h1>
+          <nav class= "navbar" aria-label="main navigation">
+            <div id="navbarBasicExample" class="navbar-menu">
+              <div class="navbar-start">
+                <%= link_to 'Home', root_path, :class=>"navbar-item" %>
+                <%= link_to 'Teams', teams_path, :class=>"navbar-item" %>
+                <%= link_to 'Players', players_path, :class=>"navbar-item" %>
+                <%= link_to 'About', static_path(permalink: 'about-us'), :class=>"navbar-item" %>
+              </div>
+            </div>
 
-  </section>
+           <%= form_tag(search_results_path, method: "get") do %>
+              <div class="navbar-item field has-addons">
+                <div class="control select">
+                  <%= select_tag "search_option", "<option>Search All</option><option>Battleground</option><option>Team</option><option>Player</option>".html_safe %>
+                </div>
+                <div class="control">
+                  <%= text_field_tag(:q, nil, class: "input") %>
+                </div>
+                <div class="control">
+                  <%= submit_tag("Search", class: "button is-info") %>
+                </div>
+              </div>
+            <% end %>
+          </nav>
+        </div>
+    </section>
 
     <div class="container">
       <section class= "section">
-        <%= form_tag(search_results_path, method: "get") do %>
-            <%= label_tag(:q, "Search for:") %>
-            <%= text_field_tag(:query) %>
-            <%= submit_tag("Search") %>
-        <% end %>
-
-
- <section class= "section">
-    <%= yield %>
-</section>
+        <%= yield %>
+      </section>
+    </div>
   </body>
 </html>

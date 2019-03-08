@@ -1,7 +1,8 @@
-<h2 class="subtitle is-3"><strong>Battlegrounds</strong></h2>
-    <ul>
+<h2 class="title is-3">Battlegrounds</h2>
+<hr/>
+    <%# <ul> %>
         <% @battlegrounds.each do |battleground| %>
-        <li><p class="subtitle is-5"><%= link_to battleground.name, battleground %></p></li>
-        <p class="subtitle is-6">Location: <%= battleground.location %></p>
+        <h2 class="title is-4"><%= link_to battleground.name, battleground %></h2>
+        <h3 class="subtitle is-6 is-spaced">Location: <%= battleground.location %></h3>
         <% end %>
-    </ul>
+    <%# </ul> %>

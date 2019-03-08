@@ -1,14 +1,12 @@
-<h2 class="subtitle is-3"><strong>All Players</strong></h2>
+<h2 class="title is-3">All Players</h2>
   <hr />
-  <ul>
   <% @players.each do |player| %>
-    <li><p class="subtitle is-5"><%= link_to player.name, player %></p></li>
-    <p class="subtitle is-6"><%= player.specialty %></p>
+    <h3 class="title is-5"><%= link_to player.name, player %></h3>
+    <h3 class="subtitle is-6 is-spaced"><%= player.specialty %></h3>
   <% end %>
-  </ul>
   <hr />
 
   <div class="columns is-centered">
-  <%= paginate @players %></div>
-  <br />
-  <%= page_entries_info @players %></div>
+    <%= paginate @players %></div>
+    <br />
+    <%= page_entries_info @players %>
