@@ -1,17 +1,16 @@
   <div class="container">
-    <h2 class="title is-3 is-spaced">Search Results</h2>
+    <h1 class="title is-3 is-spaced">Search Results</h1>
         <h3 class= "subtitle is-6">Results found for "<%= @query %>" returned <%= pluralize(@search_query.size, 'result')%>.</h3>
     </div>
 
 <div class="container">
   <section class="section">
-    <ul class="subtitle is-6">
         <% @search_query.each do |s|%>
           <h1 class="title is-size-5"><%= link_to s.name, s %></h1>
           <h2 class="subtitle is-size-6 is-spaced">
           <%= s.class.name %>
           </h2>
           <% end %>
-    </ul>
-  </section>
+    </section>
+</div>
 

@@ -1,8 +1,6 @@
 <h2 class="title is-3">Battlegrounds</h2>
 <hr/>
-    <%# <ul> %>
         <% @battlegrounds.each do |battleground| %>
         <h2 class="title is-4"><%= link_to battleground.name, battleground %></h2>
         <h3 class="subtitle is-6 is-spaced">Location: <%= battleground.location %></h3>
         <% end %>
-    <%# </ul> %>
