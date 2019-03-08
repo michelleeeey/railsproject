@@ -2,8 +2,8 @@
 <h2 class="title is-size-3"><%= @team.class.name %></h2>
 <h2 class="title is-size-4"><%= @team.name %></h2>
 <h2 class="subtitle is-size-6"><%= @team.battleground.name %> Battleground</h2>
-<hr/>
 <h3 class="subtitle is-size-5 is-italic"><%= @team.quote %></h3>
+<hr/>
 <h3 class="subtitle is-size-5 is-spaced"><strong>List of Players: </strong></h3>
 
   <% @team.players.each do |player| %>
